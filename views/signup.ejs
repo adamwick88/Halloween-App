@@ -12,7 +12,7 @@
                         <div class="alert alert-info"><%= el.msg %></div>
                     <% }) %>    
                 <% } %>
-                <form action="/signup" method="POST">
+                <form action="/signup" method="POST"  enctype="multipart/form-data">
                     <div class="mb-3">
                         <label for="userName" class="form-label">User Name</label>
                         <input type="text" class="form-control" id="userName" name="userName">
@@ -28,8 +28,9 @@
                       <div id="favoriteSpookyCharacter" class="form-text"></div>
                     </div>
                     <div class="mb-3">
-                      <label for="userImgUpload" class="form-label">Image</label>
-                      <input type="file" class="form-control" id="userImageUpload" name="file">
+                      <label for="imgUpload" class="form-label">Image</label>
+                      <input type="file" class="form-control" id="imageUpload" name="file">
+                    </div>
                 </div>
                     <div class="mb-3">
                       <label for="password" class="form-label">Password</label>
