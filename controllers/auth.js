@@ -84,14 +84,13 @@ exports.postSignup = (req, res, next) => {
     gmail_remove_dots: false,
   });
 
-  const result = cloudinary.uploader.upload(req.file.path)
+  
   const user = new User({
     userName: req.body.userName,
     email: req.body.email,
     password: req.body.password,
     favoriteSpookyCharacter:req.body.favoriteSpookyCharacter,
-    image: result.secure_url,
-    cloudinaryId: result.public_id,
+   
   });
 
   User.findOne(

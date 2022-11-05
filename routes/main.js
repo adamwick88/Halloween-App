@@ -16,6 +16,8 @@ router.post("/login", authController.postLogin);
 router.get("/logout", authController.logout);
 router.get("/signup", authController.getSignup);
 router.post("/signup", upload.single("file"), authController.postSignup);
-router.get("/addPost", ensureAuth,postsController.getPostPage)
+router.get("/addPost", ensureAuth, postsController.getPostPage)
+router.get("/feed", ensureAuth, postsController.getFeed)
+router.get("/costumeType", ensureAuth, homeController.getCostumeType)
 
 module.exports = router;

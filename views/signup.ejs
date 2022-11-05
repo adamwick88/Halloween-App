@@ -1,49 +1,33 @@
 <%- include('partials/header') -%>
-    <main class="container">
-        <div class="row justify-content-center">
-            <section class="col-6 mt-5">
-                <% if (locals.messages.errors) { %>
-                    <% messages.errors.forEach( el => { %>
-                        <div class="alert alert-danger"><%= el.msg %></div>
-                    <% }) %>    
-                <% } %>
-                <% if (locals.messages.info) { %>
-                    <% messages.info.forEach( el => { %>
-                        <div class="alert alert-info"><%= el.msg %></div>
-                    <% }) %>    
-                <% } %>
-                <form action="/signup" method="POST"  enctype="multipart/form-data">
-                    <div class="mb-3">
-                        <label for="userName" class="form-label">User Name</label>
-                        <input type="text" class="form-control" id="userName" name="userName">
-                      </div>
-                    <div class="mb-3">
-                      <label for="exampleInputEmail1" class="form-label">Email address</label>
-                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
-                      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-                    </div>
-                    <div class="mb-3">
-                      <label for="favoriteSpookyCharacter" class="form-label">Favorite Spooky Character</label>
-                      <input type="text" class="form-control" id="favoriteSpookyCharacter" aria-describedby="favoriteSpookyCharacter" name="favoriteSpookyCharacter">
-                      <div id="favoriteSpookyCharacter" class="form-text"></div>
-                    </div>
-                    <div class="mb-3">
-                      <label for="imgUpload" class="form-label">Image</label>
-                      <input type="file" class="form-control" id="imageUpload" name="file">
-                    </div>
-                </div>
-                    <div class="mb-3">
-                      <label for="password" class="form-label">Password</label>
-                      <input type="password" class="form-control" id="password" name="password">
-                    </div>
-                    <div class="mb-3">
-                        <label for="confirmPassword" class="form-label">Confirm Password</label>
-                        <input type="password" class="form-control" id="confirmPassword" name="confirmPassword">
-                      </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                  </form>
-            </section>
-        </div>
-    </main>
 
-<%- include('partials/footer') -%>
+<div class="flex justify-center items-center h-screen w-full bg-blue-400">
+  <div class="w-1/2 bg-white rounded shadow-2xl p-8 m-4">
+      <h1 class="block w-full text-center text-gray-800 text-2xl font-bold mb-6">Register</h1>
+      <form action="/signup" method="POST" enctype="multipart/form-data">
+          <div class="flex flex-col mb-4">
+              <label class="mb-2 font-bold text-lg text-gray-900" for="userName">User Name</label>
+              <input class="border py-2 px-3 text-grey-800" type="text" class="form-control" name="userName" id="userName">
+          </div>
+          <div class="flex flex-col mb-4">
+              <label class="mb-2 font-bold text-lg text-gray-900" for="email">Email</label>
+              <input class="border py-2 px-3 text-grey-800" type="email" name="email" id="email">
+          </div>
+          <div class="flex flex-col mb-4">
+            <label class="mb-2 font-bold text-lg text-gray-900" for="favoriteSpookyCharacter">Favorite Spooky Character</label>
+            <input class="border py-2 px-3 text-grey-800" type="text" name="favoriteSpookyCharacter" id="favoriteSpookyCharacter">
+        </div>
+          <div class="flex flex-col mb-4">
+              <label class="mb-2 font-bold text-lg text-gray-900" for="password">Password</label>
+              <input class="border py-2 px-3 text-grey-800" type="password" name="password" id="password">
+          </div>
+          <div class="flex flex-col mb-4">
+            <label class="mb-2 font-bold text-lg text-gray-900" for="confirmPassword">Confirm Password</label>
+            <input class="border py-2 px-3 text-grey-800" type="confirmPassword" name="confirmPassword" id="confirmPassword">
+        </div>
+          <button class="block bg-teal-400 hover:bg-teal-600 text-white uppercase text-lg mx-auto p-4 rounded" type="submit">Create Account</button>
+      </form>
+      <a class="block w-full text-center no-underline mt-4 text-sm text-gray-700 hover:text-gray-900" href="/login">Already have an account?</a>
+  </div>
+
+  
+
