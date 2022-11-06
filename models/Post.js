@@ -17,6 +17,19 @@ const PostSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+
+  difficulty: {
+    type: String,
+    allowedValues: ['Beginner', 'Easy', 'Normal', 'Hard', 'Expert'],
+    required: true,
+  },
+
+  age:{
+    type:String,
+    allowedValues: ['Infant', 'Child', 'Teen', 'Adult'],
+    required: true,
+  },
+
   likes: {
     type: Number,
     required: true,

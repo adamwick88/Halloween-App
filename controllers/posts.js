@@ -28,15 +28,10 @@ module.exports = {
       console.log(err);
     }
   },
-  getFeed: async (req, res) => { 
-    console.log(req.user)
+  getFeed: async (req, res) => {
     try {
-      //Since we have a session each request (req) contains the logged-in users info: req.user
-      //console.log(req.user) to see everything
-      //Grabbing just the posts of the logged-in user
-      const posts = await Post.find({ user: req.user.id });
-      //Sending post data from mongodb and user data to ejs template
-      res.render("feed", { posts: posts, user: req.user });
+      const posts = await Post.find().sort({ createdAt: "desc" }).lean();
+      res.render("feed.ejs", { posts: posts });
     } catch (err) {
       console.log(err);
     }
@@ -67,6 +62,8 @@ module.exports = {
         caption: req.body.caption,
         likes: 0,
         user: req.user.id,
+        difficulty:req.body.difficulty,
+        age:req.body.age,
       });
       console.log("Post has been added!");
       res.redirect("/profile");
