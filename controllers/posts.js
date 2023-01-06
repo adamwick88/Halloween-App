@@ -60,6 +60,7 @@ module.exports = {
         image: result.secure_url,
         cloudinaryId: result.public_id,
         caption: req.body.caption,
+        materials:req.body.materials,
         likes: 0,
         user: req.user.id,
         difficulty:req.body.difficulty,
@@ -67,6 +68,127 @@ module.exports = {
       });
       console.log("Post has been added!");
       res.redirect("/profile");
+    } catch (err) {
+      console.log(err);
+    }
+  },
+  getInfantCostumeBeginner: async (req, res) => {
+    try {
+      const posts = await Post.find({ age: "Infant", difficulty:'Beginner' })
+      res.render("infantCostumeBeginner", { posts: posts });
+    } catch (err) {
+      console.log(err);
+    }
+  },
+  getInfantCostumeEasy: async (req, res) => {
+    try {
+      const posts = await Post.find({ age: "Infant", difficulty:'Easy' })
+      res.render("infantCostumeBeginner", { posts: posts });
+    } catch (err) {
+      console.log(err);
+    }
+  },
+  getInfantCostumeNormal: async (req, res) => {
+    try {
+      const posts = await Post.find({ age: "Infant", difficulty:'Normal' })
+      res.render("infantCostumeBeginner", { posts: posts });
+    } catch (err) {
+      console.log(err);
+    }
+  },
+  getInfantCostumeHard: async (req, res) => {
+    try {
+      const posts = await Post.find({ age: "Infant", difficulty:'Hard' })
+      res.render("infantCostumeBeginner", { posts: posts });
+    } catch (err) {
+      console.log(err);
+    }
+  },
+  getInfantCostumeExpert: async (req, res) => {
+    try {
+      const posts = await Post.find({ age: "Infant", difficulty:'Expert' })
+      res.render("infantCostumeBeginner", { posts: posts });
+    } catch (err) {
+      console.log(err);
+    }
+  },
+
+  getChildCostumeBeginner: async (req, res) => {
+    try {
+      const posts = await Post.find({ age: "Child", difficulty:'Beginner' })
+      res.render("childCostumeBeginner", { posts: posts });
+    } catch (err) {
+      console.log(err);
+    }
+  },
+  getChildCostumeEasy: async (req, res) => {
+    try {
+      const posts = await Post.find({ age: "Child", difficulty:'Easy' })
+      res.render("childCostumeBeginner", { posts: posts });
+    } catch (err) {
+      console.log(err);
+    }
+  },
+  getChildCostumeNormal: async (req, res) => {
+    try {
+      const posts = await Post.find({ age: "Child", difficulty:'Normal' })
+      res.render("childCostumeBeginner", { posts: posts });
+    } catch (err) {
+      console.log(err);
+    }
+  },
+  getChildCostumeHard: async (req, res) => {
+    try {
+      const posts = await Post.find({ age: "Child", difficulty:'Hard' })
+      res.render("childCostumeBeginner", { posts: posts });
+    } catch (err) {
+      console.log(err);
+    }
+  },
+  getChildCostumeExpert: async (req, res) => {
+    try {
+      const posts = await Post.find({ age: "Child", difficulty:'Expert' })
+      res.render("childCostumeBeginner", { posts: posts });
+    } catch (err) {
+      console.log(err);
+    }
+  },
+  getAdultCostumeBeginner: async (req, res) => {
+    try {
+      const posts = await Post.find({ age: "Adult", difficulty:'Beginner' })
+      res.render("childCostumeBeginner", { posts: posts });
+    } catch (err) {
+      console.log(err);
+    }
+  },
+  getAdultCostumeEasy: async (req, res) => {
+    try {
+      const posts = await Post.find({ age: "Adult", difficulty:'Easy' })
+      res.render("childCostumeBeginner", { posts: posts });
+    } catch (err) {
+      console.log(err);
+    }
+  },
+  getAdultCostumeNormal: async (req, res) => {
+    try {
+      const posts = await Post.find({ age: "Adult", difficulty:'Normal' })
+      res.render("childCostumeBeginner", { posts: posts });
+    } catch (err) {
+      console.log(err);
+    }
+  },
+  getAdultCostumeHard: async (req, res) => {
+    try {
+      const posts = await Post.find({ age: "Adult", difficulty:'Hard' })
+      res.render("childCostumeBeginner", { posts: posts });
+    } catch (err) {
+      console.log(err);
+    }
+  },
+  getAdultCostumeExpert: async (req, res) => {
+    try {
+      const posts = await Post.find({ age: "Adult", difficulty:'Expert' })
+      res.render("childCostumeBeginner", { posts: posts });
     } catch (err) {
       console.log(err);
     }

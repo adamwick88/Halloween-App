@@ -20,13 +20,13 @@ const PostSchema = new mongoose.Schema({
 
   difficulty: {
     type: String,
-    allowedValues: ['Beginner', 'Easy', 'Normal', 'Hard', 'Expert'],
+    allowedValues: ['Beginner', 'Easy', 'Normal', 'Expert'],
     required: true,
   },
 
   age:{
     type:String,
-    allowedValues: ['Infant', 'Child', 'Teen', 'Adult'],
+    allowedValues: ['Infant', 'Child', 'Adult'],
     required: true,
   },
 

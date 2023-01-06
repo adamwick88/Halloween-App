@@ -20,4 +20,27 @@ router.get("/addPost", ensureAuth, postsController.getPostPage)
 router.get("/feed", ensureAuth, postsController.getFeed)
 router.get("/costumeType", ensureAuth, homeController.getCostumeType)
 
+//views infant
+router.get("/infantCostumeBeginner", ensureAuth, postsController.getInfantCostumeBeginner) 
+router.get("/infantCostumeEasy", ensureAuth, postsController.getInfantCostumeEasy)
+router.get("/infantCostumeNormal", ensureAuth, postsController.getInfantCostumeNormal)
+router.get("/infantCostumeHard", ensureAuth, postsController.getInfantCostumeHard)
+router.get("/infantCostumeExpert", ensureAuth, postsController.getInfantCostumeExpert)
+
+//views child
+router.get("/childCostumeBeginner", ensureAuth, postsController.getChildCostumeBeginner)
+router.get("/childCostumeEasy", ensureAuth, postsController.getChildCostumeEasy)
+router.get("/childCostumeNormal", ensureAuth, postsController.getChildCostumeNormal)
+router.get("/childCostumeHard", ensureAuth, postsController.getChildCostumeHard)
+router.get("/childCostumeExpert", ensureAuth, postsController.getChildCostumeExpert)
+
+//views adult pages
+router.get("/adultCostumeBeginner", ensureAuth, postsController.getAdultCostumeBeginner)
+router.get("/adultCostumeEasy", ensureAuth, postsController.getAdultCostumeEasy)
+router.get("/adultCostumeNormal", ensureAuth, postsController.getAdultCostumeNormal)
+router.get("/adultCostumeHard", ensureAuth, postsController.getAdultCostumeHard)
+router.get("/adultCostumeExpert", ensureAuth, postsController.getAdultCostumeExpert)
+
+
+
 module.exports = router;
